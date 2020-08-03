@@ -1,0 +1,35 @@
+########################################################################################################
+#                                                                                                      #
+#      spring                                                                                          #
+#                                                                                                      #
+########################################################################################################
+spring:
+  datasource: ##jdbc_config
+    driver-class-name: org.postgresql.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:postgresql://58.251.157.179:35432/flowable?characterEncoding=utf8
+    username: postgres
+    password: postgresQAZ
+########################################################################################################
+#                                                                                                      #
+#      mybatis-plus                                                                                    #
+#                                                                                                      #
+########################################################################################################
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+  type-aliases-package: com.sibat.saturn.police.common.po
+  type-enums-package: com.sibat.saturn.police.common.enums
+  global-config:
+    id-type: 2
+    field-strategy: 2
+    db-column-underline: true
+    refresh-mapper: true
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+########################################################################################################
+#                                                                                                      #
+#      logging                                                                                         #
+#                                                                                                      #
+########################################################################################################
+logging.config: classpath:log4j2.xml
